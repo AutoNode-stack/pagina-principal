@@ -155,7 +155,7 @@ const LINKS_DATA = [
   },
   {
     id: 'tool-server-8978',
-    title: 'Herramientas de Servidor (8978)',
+    title: 'Herramientas de Servidor',
     subtitle: 'Panel Administrativo en Servidor Directo',
     url: 'http://2.24.207.152:8978/#/',
     category: 'herramientas',
@@ -165,9 +165,9 @@ const LINKS_DATA = [
   },
   {
     id: 'tool-server-8001',
-    title: 'Servicio de Servidor (8001)',
+    title: 'cloudbeaver',
     subtitle: 'Aplicación / Servicio Interno',
-    url: 'http://2.24.207.152:8001/',
+    url: 'https://cloudbeaver-7zxtqu62fkd3uqmajk6euym1.2.24.207.152.sslip.io/#/',
     category: 'herramientas',
     iconText: '<i class="fa-solid fa-terminal"></i>',
     tags: ['Servidor', 'IP Directa', 'API'],
