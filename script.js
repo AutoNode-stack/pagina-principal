@@ -103,7 +103,7 @@ const LINKS_DATA = [
     id: 'port-sergio',
     title: 'Portafolio Sergio Aparicio',
     subtitle: 'Desarrollador AutoNode | GitHub: Sergioandresaparicio',
-    url: 'https://sergio.portafolio.auto-node.tech/',
+    url: 'https://sergioportafolio.auto-node.tech/',
     category: 'portafolios',
     iconText: 'SA',
     tags: ['Portafolio', 'AutoNode Team', 'Dev', 'Sergio Aparicio', 'Sergioandresaparicio', 'sergiocampuslands@gmail.com'],
