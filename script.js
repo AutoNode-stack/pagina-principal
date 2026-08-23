@@ -4,7 +4,7 @@
 
 // Master dataset of developers
 const DEVS_DIRECTORY = [
-  { name: 'Sergio Aparicio', github: 'Sergioandresaparicio', email: 'sergiocampuslands@gmail.com', portfolio: 'https://sergio.portafolio.auto-node.tech/', initials: 'SA' },
+  { name: 'Sergio Aparicio', github: 'Sergioandresaparicio', email: 'sergiocampuslands@gmail.com', portfolio: 'https://sergioportafolio.auto-node.tech/', initials: 'SA' },
   { name: 'Santiago Pabón', github: 'Santiago09', email: 'santy122324@gmail.com', portfolio: 'https://santiagoportafolio.auto-node.tech/', initials: 'SP' },
   { name: 'Jhon Reyes', github: 'JhonHenryReyesPerez', email: 'jhonrysprzhh@gmail.com', portfolio: 'https://jhonrys.auto-node.tech/', initials: 'JR' },
   { name: 'Diego León', github: 'Alter-09', email: 'diegoleonp09@gmail.com', portfolio: 'https://diegoleon.auto-node.tech/', initials: 'DL' },
