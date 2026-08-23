@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoNode | Hub de Links y Recursos Centralizados</title>
+  <meta name="description" content="Directorio de links importantes, portafolios de equipo, herramientas y proyectos de AutoNode.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237B2CBF'/><path d='M30 50 L50 30 L70 50 L50 70 Z' fill='none' stroke='%23E0AAFF' stroke-width='8'/><circle cx='50' cy='50' r='10' fill='%23E0AAFF'/></svg>">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Background Gradients -->
+  <div class="ambient-background">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="https://auto-node.tech/" target="_blank" class="brand-logo" title="Ir al sitio oficial de AutoNode">
+        <div class="logo-icon-wrapper">
+          <i class="fa-solid fa-diagram-project"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">Auto<span class="highlight">Node</span></span>
+          <span class="brand-sub">Link Hub</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="https://auto-node.tech/" target="_blank" rel="noopener noreferrer" class="btn btn-official">
+          <i class="fa-solid fa-globe"></i>
+          <span>Sitio Oficial</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Plataforma Corporativa Centralizada
+      </div>
+      <h1 class="hero-title">Recursos y Accesos de <span class="gradient-text">AutoNode</span></h1>
+      <p class="hero-subtitle">
+        Accede rápidamente a los portafolios del equipo, entorno de desarrollo y producción n8n, servicios web y herramientas de la empresa.
+      </p>
+
+      <!-- Quick Metrics Stats -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-value" id="stat-total">0</span>
+          <span class="stat-label">Links Totales</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-portfolios">0</span>
+          <span class="stat-label">Portafolios</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-tools">0</span>
+          <span class="stat-label">Herramientas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="stat-projects">0</span>
+          <span class="stat-label">Proyectos</span>
+        </div>
+      </div>
+
+      <!-- Controls: Search & Category Tabs -->
+      <div class="controls-wrapper">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="search-input" placeholder="Buscar por nombre, URL o etiqueta... (Presiona '/' para buscar)" autocomplete="off">
+          <button id="clear-search" class="clear-search-btn" title="Limpiar búsqueda" style="display: none;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="category-tabs" id="category-tabs">
+          <button class="tab-btn active" data-category="all">
+            <i class="fa-solid fa-layer-group"></i> Todos
+          </button>
+          <button class="tab-btn" data-category="portafolios">
+            <i class="fa-solid fa-user-astronaut"></i> Portafolios
+          </button>
+          <button class="tab-btn" data-category="herramientas">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Herramientas
+          </button>
+          <button class="tab-btn" data-category="proyectos">
+            <i class="fa-solid fa-rocket"></i> Proyectos
+          </button>
+          <button class="tab-btn" data-category="directorio">
+            <i class="fa-solid fa-address-book"></i> Directorio Devs
+          </button>
+          <button class="tab-btn" data-category="favorites">
+            <i class="fa-solid fa-star"></i> Favoritos <span class="fav-count-badge" id="fav-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Results Bar info -->
+      <div class="results-header" id="results-header">
+        <h2 class="section-heading" id="current-category-title">
+          <i class="fa-solid fa-compass"></i> Todos los Enlaces
+        </h2>
+        <div class="view-controls">
+          <span class="counter-text" id="links-count-text">Mostrando todos los enlaces</span>
+        </div>
+      </div>
+
+      <!-- Empty State Container -->
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <div class="empty-icon"><i class="fa-solid fa-ghost"></i></div>
+        <h3>No se encontraron enlaces</h3>
+        <p>Intenta cambiar los términos de búsqueda o seleccionar otra categoría.</p>
+        <button class="btn btn-secondary" onclick="resetFilters()">Restablecer Filtros</button>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="links-grid" id="links-grid">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+      <!-- Developer Directory Table Container -->
+      <div id="directory-view" class="directory-container" style="display: none;">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <i class="fa-solid fa-diagram-project"></i> AutoNode
+        </div>
+        <p>Soluciones de Automatización, Inteligencia Artificial y Desarrollo Web.</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://auto-node.tech/" target="_blank" class="footer-link">
+          <i class="fa-solid fa-globe"></i> auto-node.tech
+        </a>
+        <span class="footer-copy">&copy; 2026 AutoNode. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification System -->
+  <div id="toast" class="toast-container" role="alert" aria-live="polite">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message">Enlace copiado al portapapeles</span>
+  </div>
+
+  <script src="script.js?v=1.2"></script>
+</body>
+</html>
